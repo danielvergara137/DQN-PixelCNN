@@ -1,5 +1,5 @@
 class AgentConfig(object):
-  scale = 2000
+  scale = 4000
   display = False
 
   max_step = 5000 * scale
@@ -43,7 +43,7 @@ class AgentConfig(object):
   clip = False
 
 class EnvironmentConfig(object):
-  env_name = 'MontezumaRevenge-v0'
+  env_name = 'BankHeist-v0'
 
   screen_width  = 84
   screen_height = 84
