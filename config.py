@@ -12,8 +12,8 @@ class AgentConfig(object):
   discount = 0.99
   target_q_update_step = 1 * scale
 
-  learning_rate = 0.00025
-  learning_rate_minimum = 0.00025
+  learning_rate = 0.0025
+  learning_rate_minimum = 0.0025
   learning_rate_decay = 0.96
   learning_rate_decay_step = 5 * scale
 
@@ -43,7 +43,7 @@ class AgentConfig(object):
   clip = False
 
 class EnvironmentConfig(object):
-  env_name = 'BankHeist-v0'
+  env_name = 'MontezumaRevenge-v0'
 
   screen_width  = 84
   screen_height = 84

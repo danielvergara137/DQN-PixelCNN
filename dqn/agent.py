@@ -42,6 +42,7 @@ class Agent(BaseModel):
     self.build_dqn()
 
   def neural_psc(self, frame, step):
+    #return 0
     last_frame = process_density_images(frame)
     density_input = process_density_input(last_frame)
 
@@ -201,7 +202,7 @@ class Agent(BaseModel):
       target_q_t = (1. - terminal) * self.discount * max_q_t_plus_1 + reward
 
     # Mix it with Monte-Carlo Value
-    # target_q_t = (1 - self.beta) * target_q_t + self.beta * (1. - terminal) * R
+    target_q_t = (1 - self.beta) * target_q_t + self.beta * (1. - terminal) * R
     _, q_t, loss, summary_str = self.sess.run([self.optim, self.q, self.loss, self.q_summary], {
       self.target_q_t: target_q_t,
       self.action: action,
