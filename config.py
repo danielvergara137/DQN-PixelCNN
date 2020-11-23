@@ -12,8 +12,8 @@ class AgentConfig(object):
   discount = 0.99
   target_q_update_step = 1 * scale
 
-  learning_rate = 0.0025
-  learning_rate_minimum = 0.0025
+  learning_rate = 0.00025
+  learning_rate_minimum = 0.00025
   learning_rate_decay = 0.96
   learning_rate_decay_step = 5 * scale
 
@@ -54,7 +54,7 @@ class EnvironmentConfig(object):
 
 class PixelCNNConfig(AgentConfig, EnvironmentConfig):
   beta = 0.1
-  psc_scale = 0.1
+  psc_scale = 0.2
 
   psc_start = int(2.5 * AgentConfig.scale)
 
