@@ -43,7 +43,7 @@ class AgentConfig(object):
   clip = False
 
 class EnvironmentConfig(object):
-  env_name = 'MontezumaRevenge-v0'
+  env_name = 'MsPacman-v0'
 
   screen_width  = 84
   screen_height = 84
@@ -54,7 +54,7 @@ class EnvironmentConfig(object):
 
 class PixelCNNConfig(AgentConfig, EnvironmentConfig):
   beta = 0.1
-  psc_scale = 0.2
+  psc_scale = 0.1
 
   psc_start = int(2.5 * AgentConfig.scale)
 

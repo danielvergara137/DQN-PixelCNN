@@ -15,6 +15,7 @@ from .utils import rgb2gray, imresize
 from functools import reduce
 from .GatedPixelCNN.func import process_density_images, process_density_input, get_network
 from math import log, exp, pow
+import cv2
 
 def init_history(h, si, t=4):
   for i in range(t):
@@ -405,7 +406,7 @@ class Agent(BaseModel):
     for summary_str in summary_str_lists:
       self.writer.add_summary(summary_str, self.step)
 
-  def play(self, n_step=100000, n_episode=100, test_ep=None, render=False):
+  def play(self, n_step=100000, n_episode=10, test_ep=None, render=False):
     if test_ep == None:
       test_ep = self.ep_end
 
@@ -427,7 +428,11 @@ class Agent(BaseModel):
         action = self.predict(test_history.get(), test_ep)
         screen, reward, terminal = self.env.act(action)
         test_history.add(screen)
-
+        
+        #if idx == 9:
+        #  image = cv2.resize(screen, (42,42))
+        #  cv2.imwrite(r'\images\'+im'+ str(t) +'.png', image)
+          
         current_reward += reward
         if terminal:
           break
