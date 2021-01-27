@@ -12,8 +12,8 @@ class AgentConfig(object):
   discount = 0.99
   target_q_update_step = 1 * scale
 
-  learning_rate = 0.00025
-  learning_rate_minimum = 0.00025
+  learning_rate = 0.0005
+  learning_rate_minimum = 0.0005
   learning_rate_decay = 0.96
   learning_rate_decay_step = 5 * scale
 
